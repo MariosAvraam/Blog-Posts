@@ -12,10 +12,14 @@ from datetime import date
 from sqlalchemy.orm import relationship
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from functools import wraps
+from os import getenv
+from dotenv import load_dotenv()
 
+load_dotenv()
+SECRET_KEY = getenv("SECRET_KEY")
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'sndvbq3whr92h982uwdn2ef928whf'
+app.config['SECRET_KEY'] = SECRET_KEY
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
