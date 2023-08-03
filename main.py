@@ -13,7 +13,7 @@ from sqlalchemy.orm import relationship
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from functools import wraps
 from os import getenv
-from dotenv import load_dotenv()
+from dotenv import load_dotenv
 
 load_dotenv()
 SECRET_KEY = getenv("SECRET_KEY")
